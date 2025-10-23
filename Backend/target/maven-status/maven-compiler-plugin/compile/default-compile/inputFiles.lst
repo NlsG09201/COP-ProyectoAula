@@ -1,4 +1,7 @@
 C:\Users\nelso\OneDrive\Escritorio\ProyectoAula-main\Backend\src\main\java\com\ProyectoAula\Backend\BackendApplication.java
+C:\Users\nelso\OneDrive\Escritorio\ProyectoAula-main\Backend\src\main\java\com\ProyectoAula\Backend\config\DataInitializer.java
+C:\Users\nelso\OneDrive\Escritorio\ProyectoAula-main\Backend\src\main\java\com\ProyectoAula\Backend\config\SecurityConfig.java
+C:\Users\nelso\OneDrive\Escritorio\ProyectoAula-main\Backend\src\main\java\com\ProyectoAula\Backend\controller\AiAgentController.java
 C:\Users\nelso\OneDrive\Escritorio\ProyectoAula-main\Backend\src\main\java\com\ProyectoAula\Backend\controller\CitaController.java
 C:\Users\nelso\OneDrive\Escritorio\ProyectoAula-main\Backend\src\main\java\com\ProyectoAula\Backend\controller\DetalleOdontogramaController.java
 C:\Users\nelso\OneDrive\Escritorio\ProyectoAula-main\Backend\src\main\java\com\ProyectoAula\Backend\controller\DienteController.java
@@ -20,6 +23,7 @@ C:\Users\nelso\OneDrive\Escritorio\ProyectoAula-main\Backend\src\main\java\com\P
 C:\Users\nelso\OneDrive\Escritorio\ProyectoAula-main\Backend\src\main\java\com\ProyectoAula\Backend\repository\OdontogramaRepository.java
 C:\Users\nelso\OneDrive\Escritorio\ProyectoAula-main\Backend\src\main\java\com\ProyectoAula\Backend\repository\PacienteRepository.java
 C:\Users\nelso\OneDrive\Escritorio\ProyectoAula-main\Backend\src\main\java\com\ProyectoAula\Backend\repository\ServicioRepository.java
+C:\Users\nelso\OneDrive\Escritorio\ProyectoAula-main\Backend\src\main\java\com\ProyectoAula\Backend\service\AiAgentService.java
 C:\Users\nelso\OneDrive\Escritorio\ProyectoAula-main\Backend\src\main\java\com\ProyectoAula\Backend\service\CitaService.java
 C:\Users\nelso\OneDrive\Escritorio\ProyectoAula-main\Backend\src\main\java\com\ProyectoAula\Backend\service\DetalleOdontogramaService.java
 C:\Users\nelso\OneDrive\Escritorio\ProyectoAula-main\Backend\src\main\java\com\ProyectoAula\Backend\service\DienteService.java

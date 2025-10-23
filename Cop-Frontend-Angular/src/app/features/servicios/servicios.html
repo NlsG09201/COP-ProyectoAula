@@ -1,0 +1,134 @@
+<section class="services-hero">
+  <div class="container mx-auto text-center py-20">
+    <h1 class="text-5xl font-bold text-gray-800 mb-4">Nuestros Servicios Integrales</h1>
+    <p class="text-xl text-gray-600 mb-8">Ofrecemos una amplia gama de tratamientos dentales y terapias psicológicas.</p>
+  </div>
+</section>
+
+<section id="odontologia" class="service-category">
+  <div class="container mx-auto py-16">
+    <h2 class="text-4xl font-bold text-gray-800 text-center mb-12">Servicios Odontológicos</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="service-detail-card">
+        <img src="https://placehold.co/400x250/C8E6C9/000000?text=Odontolog%C3%ADa+General" alt="Odontología General" loading="lazy" class="rounded-t-lg mb-4">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Odontología General</h3>
+        <p class="text-gray-600 mb-4">
+          Realizamos diagnósticos, limpiezas profesionales, empastes, extracciones y tratamientos de conducto. Mantenemos tu salud bucal en óptimas condiciones.
+        </p>
+        <ul class="list-disc list-inside text-gray-700 mb-4">
+          <li>Limpieza y Profilaxis</li>
+          <li>Empastes y Restauraciones</li>
+          <li>Endodoncias (tratamientos de conducto)</li>
+          <li>Extracciones Dentales</li>
+        </ul>
+        <button class="btn-primary-small" (click)="solicitarCita('Odontología General')" aria-label="Solicitar cita para Odontología General">Solicitar Cita</button>
+      </div>
+      <div class="service-detail-card">
+        <img src="https://placehold.co/400x250/C8E6C9/000000?text=Ortodoncia" alt="Ortodoncia" loading="lazy" class="rounded-t-lg mb-4">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Ortodoncia</h3>
+        <p class="text-gray-600 mb-4">
+          Corrección de la posición de los dientes y la mandíbula con brackets tradicionales, estéticos o alineadores invisibles.
+        </p>
+        <ul class="list-disc list-inside text-gray-700 mb-4">
+          <li>Brackets Metálicos</li>
+          <li>Brackets Estéticos (Cerámica, Zafiro)</li>
+          <li>Ortodoncia Invisible (Aligners)</li>
+          <li>Retenedores</li>
+        </ul>
+        <button class="btn-primary-small" (click)="solicitarCita('Ortodoncia')" aria-label="Solicitar cita para Ortodoncia">Solicitar Cita</button>
+      </div>
+      <div class="service-detail-card">
+        <img src="https://placehold.co/400x250/C8E6C9/000000?text=Est%C3%A9tica+Dental" alt="Estética Dental" loading="lazy" class="rounded-t-lg mb-4">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Estética Dental</h3>
+        <p class="text-gray-600 mb-4">
+          Mejora la apariencia de tu sonrisa con blanqueamientos, carillas, coronas y contorneado dental.
+        </p>
+        <ul class="list-disc list-inside text-gray-700 mb-4">
+          <li>Blanqueamiento Dental</li>
+          <li>Carillas de Porcelana y Resina</li>
+          <li>Coronas Dentales</li>
+          <li>Contorneado Estético</li>
+        </ul>
+        <button class="btn-primary-small" (click)="solicitarCita('Estética Dental')" aria-label="Solicitar cita para Estética Dental">Solicitar Cita</button>
+      </div>
+      <div class="service-detail-card">
+        <img src="https://placehold.co/400x250/C8E6C9/000000?text=Implantes+Dentales" alt="Implantes Dentales" loading="lazy" class="rounded-t-lg mb-4">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Implantes Dentales</h3>
+        <p class="text-gray-600 mb-4">
+          Soluciones permanentes para reemplazar dientes perdidos, restaurando la función y la estética.
+        </p>
+        <ul class="list-disc list-inside text-gray-700 mb-4">
+          <li>Implantes de Titanio</li>
+          <li>Coronas sobre Implantes</li>
+          <li>Puentes sobre Implantes</li>
+          <li>Regeneración Ósea</li>
+        </ul>
+        <button class="btn-primary-small" (click)="solicitarCita('Implantes Dentales')" aria-label="Solicitar cita para Implantes Dentales">Solicitar Cita</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="psicologia" class="service-category bg-gray-100">
+  <div class="container mx-auto py-16">
+    <h2 class="text-4xl font-bold text-gray-800 text-center mb-12">Servicios Psicológicos</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="service-detail-card">
+        <img src="https://placehold.co/400x250/D1C4E9/000000?text=Terapia+Individual" alt="Terapia Individual" loading="lazy" class="rounded-t-lg mb-4">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Terapia Individual</h3>
+        <p class="text-gray-600 mb-4">
+          Sesiones personalizadas para abordar problemas de ansiedad, depresión, estrés, duelos y crecimiento personal.
+        </p>
+        <ul class="list-disc list-inside text-gray-700 mb-4">
+          <li>Manejo de Ansiedad y Estrés</li>
+          <li>Terapia para la Depresión</li>
+          <li>Apoyo en Duelos</li>
+          <li>Desarrollo Personal</li>
+        </ul>
+        <button class="btn-primary-small" (click)="solicitarCita('Terapia Individual')" aria-label="Solicitar cita para Terapia Individual">Solicitar Cita</button>
+      </div>
+      <div class="service-detail-card">
+        <img src="https://placehold.co/400x250/D1C4E9/000000?text=Terapia+de+Pareja" alt="Terapia de Pareja" loading="lazy" class="rounded-t-lg mb-4">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Terapia de Pareja</h3>
+        <p class="text-gray-600 mb-4">
+          Ayudamos a las parejas a mejorar la comunicación, resolver conflictos y fortalecer su relación.
+        </p>
+        <ul class="list-disc list-inside text-gray-700 mb-4">
+          <li>Mejora de la Comunicación</li>
+          <li>Resolución de Conflictos</li>
+          <li>Fortalecimiento de Vínculos</li>
+          <li>Terapia Prematrimonial</li>
+        </ul>
+        <button class="btn-primary-small" (click)="solicitarCita('Terapia de Pareja')" aria-label="Solicitar cita para Terapia de Pareja">Solicitar Cita</button>
+      </div>
+      <div class="service-detail-card">
+        <img src="https://placehold.co/400x250/D1C4E9/000000?text=Terapia+Familiar" alt="Terapia Familiar" loading="lazy" class="rounded-t-lg mb-4">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Terapia Familiar</h3>
+        <p class="text-gray-600 mb-4">
+          Intervenciones para mejorar la dinámica familiar, afrontar cambios y superar Crisis.
+        </p>
+        <ul class="list-disc list-inside text-gray-700 mb-4">
+          <li>Dinámicas Familiares</li>
+          <li>Adaptación a Cambios</li>
+          <li>Apoyo en Crisis Familiares</li>
+          <li>Comunicación Familiar</li>
+        </ul>
+        <button class="btn-primary-small" (click)="solicitarCita('Terapia Familiar')" aria-label="Solicitar cita para Terapia Familiar">Solicitar Cita</button>
+      </div>
+      <div class="service-detail-card">
+        <img src="https://placehold.co/400x250/D1C4E9/000000?text=Psicolog%C3%ADa+Infantil" alt="Psicología Infantil y Adolescente" loading="lazy" class="rounded-t-lg mb-4">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Psicología Infantil y Adolescente</h3>
+        <p class="text-gray-600 mb-4">
+          Apoyo a niños y adolescentes en el manejo de emociones, problemas de conducta y desarrollo.
+        </p>
+        <ul class="list-disc list-inside text-gray-700 mb-4">
+          <li>Problemas de Conducta</li>
+          <li>Manejo de Emociones</li>
+          <li>Dificultades de Aprendizaje</li>
+          <li>Orientación a Padres</li>
+        </ul>
+        <button class="btn-primary-small" (click)="solicitarCita('Psicología Infantil')" aria-label="Solicitar cita para Psicología Infantil">Solicitar Cita</button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,15 +1,16 @@
 import { Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { authGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
-  { path: '', component: DashboardComponent },
-  {
-    path: 'citas',
-    loadComponent: () => import('./features/citas/cita-page.component').then(m => m.CitaPageComponent)
-  },
-  {
-    path: 'odontograma',
-    loadComponent: () => import('./features/odontograma/odontograma-page.component').then(m => m.OdontogramaPageComponent)
-  },
-  { path: '**', redirectTo: '' }
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', loadComponent: () => import('./features/home/home').then(m => m.HomeComponent) },
+  { path: 'servicios', loadComponent: () => import('./features/servicios/servicios').then(m => m.ServiciosComponent) },
+  { path: 'nosotros', loadComponent: () => import('./features/nosotros/nosotros').then(m => m.NosotrosComponent) },
+  { path: 'testimonios', loadComponent: () => import('./features/testimonios/testimonios').then(m => m.TestimoniosComponent) },
+  { path: 'contacto', loadComponent: () => import('./features/contacto/contacto').then(m => m.ContactoComponent) },
+  { path: 'login', loadComponent: () => import('./features/login/login.component').then(m => m.LoginComponent) },
+  { path: 'dashboard', canActivate: [authGuard], loadComponent: () => import('./dashboard/dashboard.component').then(m => m.DashboardComponent) },
+  { path: 'citas', canActivate: [authGuard], loadComponent: () => import('./features/citas/cita-page.component').then(m => m.CitaPageComponent) },
+  { path: 'odontograma', canActivate: [authGuard], loadComponent: () => import('./features/odontograma/odontograma-page.component').then(m => m.OdontogramaPageComponent) },
+  { path: '**', redirectTo: '/home' }
 ];

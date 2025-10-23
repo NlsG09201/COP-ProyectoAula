@@ -2,7 +2,6 @@ package com.ProyectoAula.Backend.model;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -36,7 +35,7 @@ public class Paciente {
     public String getDireccion() { return direccion; }
     public void setDireccion(String direccion) { this.direccion = direccion; }
     public void setFecha(LocalTime fecha) {
-        // TODO Auto-generated method stub
+        // Remove the placeholder comment and implement the method or delete it if not needed
         throw new UnsupportedOperationException("Unimplemented method 'setFecha'");
     }
 }

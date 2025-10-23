@@ -6,6 +6,5 @@ public record ServicioDto(
 ) {
 
     public Object nombre() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'nombre'");
+        return tipoServicio;
     }}

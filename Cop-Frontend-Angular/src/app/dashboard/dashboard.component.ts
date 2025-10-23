@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [MatCardModule, MatButtonModule, RouterModule],
   template: `
-    <div class="grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+    <div class="grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 800px; margin: 0 auto;">
       <mat-card>
         <mat-card-title>Citas</mat-card-title>
         <mat-card-content>
@@ -25,15 +25,6 @@ import { RouterModule } from '@angular/router';
         </mat-card-content>
         <mat-card-actions>
           <button mat-raised-button color="accent" routerLink="/odontograma">Abrir</button>
-        </mat-card-actions>
-      </mat-card>
-      <mat-card>
-        <mat-card-title>Indicadores</mat-card-title>
-        <mat-card-content>
-          Próximas funcionalidades de reportes.
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-stroked-button disabled>Próximamente</button>
         </mat-card-actions>
       </mat-card>
     </div>

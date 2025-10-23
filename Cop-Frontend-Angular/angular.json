@@ -33,12 +33,12 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "cop-frontend-angular:build",
+            "buildTarget": "cop-frontend-angular:build",
             "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {
-              "browserTarget": "cop-frontend-angular:build:production"
+              "buildTarget": "cop-frontend-angular:build:production"
             }
           }
         }

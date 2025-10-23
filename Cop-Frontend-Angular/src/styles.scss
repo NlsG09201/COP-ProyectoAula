@@ -1,15 +1,11 @@
 @use '@angular/material' as mat;
 
-// Tema Material personalizado
-@include mat.core();
-$primary-palette: mat.define-palette(mat.$indigo-palette, 500, 300, 700);
-$accent-palette: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-$warn-palette: mat.define-palette(mat.$red-palette);
-$theme: mat.define-light-theme((
+// Tema Material personalizado (Material v20 - M3)
+$theme: mat.define-theme((
   color: (
-    primary: $primary-palette,
-    accent: $accent-palette,
-    warn: $warn-palette
+    theme-type: light,
+    primary: mat.$indigo-palette,
+    tertiary: mat.$pink-palette
   ),
   typography: mat.define-typography-config(),
   density: 0

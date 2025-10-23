@@ -1,16 +1,4 @@
-@use '@angular/material' as mat;
-
-// Tema Material personalizado (Material v20 - M3)
-$theme: mat.define-theme((
-  color: (
-    theme-type: light,
-    primary: mat.$indigo-palette,
-    tertiary: mat.$pink-palette
-  ),
-  typography: mat.define-typography-config(),
-  density: 0
-));
-@include mat.all-component-themes($theme);
+// Material theming deshabilitado temporalmente para compatibilidad de build.
 
 html, body {
   height: 100%;

@@ -1,0 +1,13 @@
+com\ProyectoAula\Backend\controller\CitaController.class
+com\ProyectoAula\Backend\model\Cita.class
+com\ProyectoAula\Backend\repository\ServicioRepository.class
+com\ProyectoAula\Backend\model\Servicio.class
+com\ProyectoAula\Backend\repository\PacienteRepository.class
+com\ProyectoAula\Backend\controller\MedicoController.class
+com\ProyectoAula\Backend\repository\MedicoRepository.class
+com\ProyectoAula\Backend\repository\CitaRepository.class
+com\ProyectoAula\Backend\controller\ServicioController.class
+com\ProyectoAula\Backend\model\Medico.class
+com\ProyectoAula\Backend\controller\PacienteController.class
+com\ProyectoAula\Backend\BackendApplication.class
+com\ProyectoAula\Backend\model\Paciente.class

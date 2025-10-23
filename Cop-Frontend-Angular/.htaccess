@@ -1,0 +1,43 @@
+RewriteEngine On
+
+# Bloquear y redirigir index.html
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.*)/index\.html\ HTTP/
+RewriteRule ^(.*)/index\.html$ /$1 [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ / [R=301,L]
+
+# Bloquear y redirigir servicios.html
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.*)/servicios\.html\ HTTP/
+RewriteRule ^(.*)/servicios\.html$ /$1/servicios [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /servicios\.html\ HTTP/
+RewriteRule ^servicios\.html$ /servicios [R=301,L]
+
+# Bloquear y redirigir testimonios.html
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.*)/testimonios\.html\ HTTP/
+RewriteRule ^(.*)/testimonios\.html$ /$1/testimonios [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /testimonios\.html\ HTTP/
+RewriteRule ^testimonios\.html$ /testimonios [R=301,L]
+
+# Bloquear y redirigir nosotros.html
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.*)/nosotros\.html\ HTTP/
+RewriteRule ^(.*)/nosotros\.html$ /$1/nosotros [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /nosotros\.html\ HTTP/
+RewriteRule ^nosotros\.html$ /nosotros [R=301,L]
+
+# Bloquear y redirigir contacto.html
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.*)/contacto\.html\ HTTP/
+RewriteRule ^(.*)/contacto\.html$ /$1/contacto [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /contacto\.html\ HTTP/
+RewriteRule ^contacto\.html$ /contacto [R=301,L]
+
+# Asegurar que las URLs sin .html funcionen correctamente
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Configure el paquete “ea-php82” como el lenguaje de programación predeterminado “PHP”.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82___lsphp .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

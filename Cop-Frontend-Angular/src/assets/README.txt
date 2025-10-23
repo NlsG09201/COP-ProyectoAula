@@ -1,0 +1,1 @@
+Coloca aquí imágenes y logos del proyecto. Se migrarán desde Cop-Frontend/IMG.

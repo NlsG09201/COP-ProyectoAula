@@ -14,7 +14,7 @@ import { IaAgentWidgetComponent } from './shared/components/ia-agent-widget/ia-a
     <header class="header bg-white shadow" *ngIf="!isDashboardSection">
       <div class="container mx-auto flex justify-between items-center p-4">
         <div class="logo flex items-center">
-          <img src="assets/Logo.png" alt="Logo Centro Odontológico y Psicológico" class="h-16 w-auto rounded-lg shadow-md">
+          <img src="assets/IMG/Logo.png" alt="Logo Centro Odontológico y Psicológico" class="h-16 w-auto rounded-lg shadow-md">
           <span class="ml-4 text-2xl font-bold text-gray-800">Centro Odontológico y Psicológico</span>
         </div>
         <!-- Botón hamburguesa -->

@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
-# Etapa de build: usa Node 20.19.0 para compilar Angular
-ARG NODE_VERSION=20.19.0
+# Etapa de build: usa Node 20.19.15 para compilar Angular
+ARG NODE_VERSION=20.19.15
 ARG APP_NAME=cop-frontend-angular
 
 FROM node:${NODE_VERSION}-alpine AS builder
@@ -13,7 +13,6 @@ RUN npm ci
 
 # Copia el resto del código y compila en modo producción
 COPY . .
-# Si tu script de build requiere configuración, usa: --configuration production
 RUN npm run build -- --configuration production
 
 # Etapa de runtime: sirve estáticos con Nginx
@@ -23,8 +22,8 @@ FROM nginx:1.25-alpine AS runner
 ARG APP_NAME
 
 # Copia los artefactos generados por Angular al root de Nginx
-# Para Angular 16+ el output suele estar en dist/<app>/browser
-COPY --from=builder /app/dist/${APP_NAME}/browser /usr/share/nginx/html
+# Para build sin SSR, los archivos quedan en dist/<app>
+COPY --from=builder /app/dist/${APP_NAME} /usr/share/nginx/html
 
 # Expone el puerto de Nginx
 EXPOSE 80

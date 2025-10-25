@@ -1,134 +1,217 @@
-<section class="services-hero">
-  <div class="container mx-auto text-center py-20">
-    <h1 class="text-5xl font-bold text-gray-800 mb-4">Nuestros Servicios Integrales</h1>
-    <p class="text-xl text-gray-600 mb-8">Ofrecemos una amplia gama de tratamientos dentales y terapias psicológicas.</p>
+<section class="services-hero bg-gradient-to-br from-blue-50 via-sky-50 to-cyan-100">
+  <div class="container mx-auto text-center py-20 px-4">
+    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-800 mb-4">
+      Servicios Integrales de Salud
+    </h1>
+    <p class="text-lg md:text-xl text-slate-600 mb-8">Odontología y Psicología con enfoque humano y tecnología moderna.</p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a routerLink="/contacto" class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-white font-semibold shadow-md hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        Solicitar Cita
+      </a>
+      <a routerLink="/servicios" fragment="psicologia" class="inline-flex items-center gap-2 rounded-xl bg-purple-600 px-5 py-3 text-white font-semibold shadow-md hover:bg-purple-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Ver Psicología
+      </a>
+    </div>
   </div>
 </section>
 
 <section id="odontologia" class="service-category">
   <div class="container mx-auto py-16">
-    <h2 class="text-4xl font-bold text-gray-800 text-center mb-12">Servicios Odontológicos</h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 text-center mb-12">
+      <span class="inline-flex items-center gap-3">
+        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h10M5 11h14M9 15h6"/></svg>
+        Servicios Odontológicos
+      </span>
+    </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="service-detail-card">
-        <img src="https://placehold.co/400x250/C8E6C9/000000?text=Odontolog%C3%ADa+General" alt="Odontología General" loading="lazy" class="rounded-t-lg mb-4">
+      <div class="service-detail-card group bg-white rounded-2xl border border-slate-200 shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+        <div class="service-icon w-20 h-20 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shadow-md transition-transform duration-200 group-hover:-translate-y-1" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M8 3c2-1 6-1 8 0 2 1 2 4 1 6-1 3-2 7-5 11-3-4-4-8-5-11-1-2-1-5 1-6z"/>
+          </svg>
+        </div>
         <h3 class="text-2xl font-semibold text-gray-800 mb-3">Odontología General</h3>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-600 mb-4 leading-relaxed">
           Realizamos diagnósticos, limpiezas profesionales, empastes, extracciones y tratamientos de conducto. Mantenemos tu salud bucal en óptimas condiciones.
         </p>
-        <ul class="list-disc list-inside text-gray-700 mb-4">
+        <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2">
           <li>Limpieza y Profilaxis</li>
           <li>Empastes y Restauraciones</li>
           <li>Endodoncias (tratamientos de conducto)</li>
           <li>Extracciones Dentales</li>
         </ul>
-        <button class="btn-primary-small" (click)="solicitarCita('Odontología General')" aria-label="Solicitar cita para Odontología General">Solicitar Cita</button>
+        <button class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-white font-semibold shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600" (click)="solicitarCita('Odontología General')" aria-label="Solicitar cita para Odontología General">Solicitar Cita</button>
       </div>
-      <div class="service-detail-card">
-        <img src="https://placehold.co/400x250/C8E6C9/000000?text=Ortodoncia" alt="Ortodoncia" loading="lazy" class="rounded-t-lg mb-4">
+      <div class="service-detail-card group bg-white rounded-2xl border border-slate-200 shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+        <div class="service-icon w-20 h-20 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shadow-md transition-transform duration-200 group-hover:-translate-y-1" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="4" y="7" width="16" height="10" rx="4"/>
+            <path d="M7 11h10M7 13h10"/>
+          </svg>
+        </div>
         <h3 class="text-2xl font-semibold text-gray-800 mb-3">Ortodoncia</h3>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-600 mb-4 leading-relaxed">
           Corrección de la posición de los dientes y la mandíbula con brackets tradicionales, estéticos o alineadores invisibles.
         </p>
-        <ul class="list-disc list-inside text-gray-700 mb-4">
+        <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2">
           <li>Brackets Metálicos</li>
           <li>Brackets Estéticos (Cerámica, Zafiro)</li>
           <li>Ortodoncia Invisible (Aligners)</li>
           <li>Retenedores</li>
         </ul>
-        <button class="btn-primary-small" (click)="solicitarCita('Ortodoncia')" aria-label="Solicitar cita para Ortodoncia">Solicitar Cita</button>
+        <button class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-white font-semibold shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600" (click)="solicitarCita('Ortodoncia')" aria-label="Solicitar cita para Ortodoncia">Solicitar Cita</button>
       </div>
-      <div class="service-detail-card">
-        <img src="https://placehold.co/400x250/C8E6C9/000000?text=Est%C3%A9tica+Dental" alt="Estética Dental" loading="lazy" class="rounded-t-lg mb-4">
+      <div class="service-detail-card group bg-white rounded-2xl border border-slate-200 shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+        <div class="service-icon w-20 h-20 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shadow-md transition-transform duration-200 group-hover:-translate-y-1" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 3l2 4 4 1-3 3 1 4-4-2-4 2 1-4-3-3 4-1 2-4z"/>
+            <path d="M5 5l1 2M18 6l-1 2"/>
+          </svg>
+        </div>
         <h3 class="text-2xl font-semibold text-gray-800 mb-3">Estética Dental</h3>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-600 mb-4 leading-relaxed">
           Mejora la apariencia de tu sonrisa con blanqueamientos, carillas, coronas y contorneado dental.
         </p>
-        <ul class="list-disc list-inside text-gray-700 mb-4">
+        <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2">
           <li>Blanqueamiento Dental</li>
           <li>Carillas de Porcelana y Resina</li>
           <li>Coronas Dentales</li>
           <li>Contorneado Estético</li>
         </ul>
-        <button class="btn-primary-small" (click)="solicitarCita('Estética Dental')" aria-label="Solicitar cita para Estética Dental">Solicitar Cita</button>
+        <button class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-white font-semibold shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600" (click)="solicitarCita('Estética Dental')" aria-label="Solicitar cita para Estética Dental">Solicitar Cita</button>
       </div>
-      <div class="service-detail-card">
-        <img src="https://placehold.co/400x250/C8E6C9/000000?text=Implantes+Dentales" alt="Implantes Dentales" loading="lazy" class="rounded-t-lg mb-4">
+      <div class="service-detail-card group bg-white rounded-2xl border border-slate-200 shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+        <div class="service-icon w-20 h-20 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shadow-md transition-transform duration-200 group-hover:-translate-y-1" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v8M9 10h6M8 12h8M9 14h6"/>
+            <rect x="9" y="16" width="6" height="4" rx="1"/>
+          </svg>
+        </div>
         <h3 class="text-2xl font-semibold text-gray-800 mb-3">Implantes Dentales</h3>
-        <p class="text-gray-600 mb-4">
+        <p class="text-gray-600 mb-4 leading-relaxed">
           Soluciones permanentes para reemplazar dientes perdidos, restaurando la función y la estética.
         </p>
-        <ul class="list-disc list-inside text-gray-700 mb-4">
+        <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2">
           <li>Implantes de Titanio</li>
           <li>Coronas sobre Implantes</li>
           <li>Puentes sobre Implantes</li>
           <li>Regeneración Ósea</li>
         </ul>
-        <button class="btn-primary-small" (click)="solicitarCita('Implantes Dentales')" aria-label="Solicitar cita para Implantes Dentales">Solicitar Cita</button>
+        <button class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-white font-semibold shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600" (click)="solicitarCita('Implantes Dentales')" aria-label="Solicitar cita para Implantes Dentales">Solicitar Cita</button>
+      </div>
+    </div>
+    </div>
+  </section>
+
+<section id="psicologia" class="service-category bg-gray-100">
+  <div class="container mx-auto py-16">
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 text-center mb-12">
+      <span class="inline-flex items-center gap-3">
+        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l3 3"/></svg>
+        Servicios Psicológicos
+      </span>
+    </h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="service-detail-card group bg-white rounded-2xl border border-slate-200 shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+        <div class="service-icon w-20 h-20 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shadow-md transition-transform duration-200 group-hover:-translate-y-1" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 3c4.418 0 8 3.134 8 7s-3.582 7-8 7-8-3.134-8-7 3.582-7 8-7z"/>
+            <path d="M9 10h6M10 12h4"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Psicoterapia Individual</h3>
+        <p class="text-gray-600 mb-4 leading-relaxed">
+          Acompañamiento para ansiedad, estrés, depresión y crecimiento personal.
+        </p>
+        <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2">
+          <li>Evaluación clínica</li>
+          <li>Terapia cognitivo-conductual</li>
+          <li>Manejo de ansiedad</li>
+          <li>Habilidades de afrontamiento</li>
+        </ul>
+        <button class="inline-flex items-center gap-2 rounded-lg bg-purple-600 px-4 py-2 text-white font-semibold shadow-sm hover:bg-purple-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600" (click)="solicitarCita('Psicoterapia Individual')" aria-label="Solicitar cita para Psicoterapia Individual">Solicitar Cita</button>
+      </div>
+
+      <div class="service-detail-card group bg-white rounded-2xl border border-slate-200 shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+        <div class="service-icon w-20 h-20 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shadow-md transition-transform duration-200 group-hover:-translate-y-1" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 21s-6-4.35-6-9a6 6 0 1112 0c0 4.65-6 9-6 9z"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Terapia de Pareja</h3>
+        <p class="text-gray-600 mb-4 leading-relaxed">
+          Intervenciones para comunicación, resolución de conflictos y fortalecimiento del vínculo.
+        </p>
+        <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2">
+          <li>Evaluación del vínculo</li>
+          <li>Técnicas de comunicación</li>
+          <li>Reparación de confianza</li>
+          <li>Plan de crecimiento conjunto</li>
+        </ul>
+        <button class="inline-flex items-center gap-2 rounded-lg bg-purple-600 px-4 py-2 text-white font-semibold shadow-sm hover:bg-purple-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600" (click)="solicitarCita('Terapia de Pareja')" aria-label="Solicitar cita para Terapia de Pareja">Solicitar Cita</button>
+      </div>
+
+      <div class="service-detail-card group bg-white rounded-2xl border border-slate-200 shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+        <div class="service-icon w-20 h-20 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shadow-md transition-transform duration-200 group-hover:-translate-y-1" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="5" y="3" width="14" height="18" rx="2"/>
+            <path d="M8 7h8M8 11h8M8 15h5"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Evaluación Psicológica</h3>
+        <p class="text-gray-600 mb-4 leading-relaxed">
+          Valoraciones integrales, informes clínicos y recomendaciones para tratamiento.
+        </p>
+        <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2">
+          <li>Entrevista clínica</li>
+          <li>Aplicación de pruebas</li>
+          <li>Informe diagnóstico</li>
+          <li>Plan de tratamiento</li>
+        </ul>
+        <button class="inline-flex items-center gap-2 rounded-lg bg-purple-600 px-4 py-2 text-white font-semibold shadow-sm hover:bg-purple-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600" (click)="solicitarCita('Evaluación Psicológica')" aria-label="Solicitar cita para Evaluación Psicológica">Solicitar Cita</button>
+      </div>
+
+      <div class="service-detail-card group bg-white rounded-2xl border border-slate-200 shadow-md hover:shadow-xl transition transform hover:-translate-y-1">
+        <div class="service-icon w-20 h-20 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shadow-md transition-transform duration-200 group-hover:-translate-y-1" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 8h14M5 12h14M5 16h10"/>
+            <path d="M7 20l-2-2 2-2"/>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Talleres y Bienestar</h3>
+        <p class="text-gray-600 mb-4 leading-relaxed">
+          Programas grupales de autocuidado, mindfulness y manejo del estrés.
+        </p>
+        <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2">
+          <li>Mindfulness y respiración</li>
+          <li>Gestión del estrés</li>
+          <li>Habilidades emocionales</li>
+          <li>Prevención del burnout</li>
+        </ul>
+        <button class="inline-flex items-center gap-2 rounded-lg bg-purple-600 px-4 py-2 text-white font-semibold shadow-sm hover:bg-purple-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600" (click)="solicitarCita('Talleres y Bienestar')" aria-label="Solicitar cita para Talleres y Bienestar">Solicitar Cita</button>
       </div>
     </div>
   </div>
 </section>
 
-<section id="psicologia" class="service-category bg-gray-100">
-  <div class="container mx-auto py-16">
-    <h2 class="text-4xl font-bold text-gray-800 text-center mb-12">Servicios Psicológicos</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="service-detail-card">
-        <img src="https://placehold.co/400x250/D1C4E9/000000?text=Terapia+Individual" alt="Terapia Individual" loading="lazy" class="rounded-t-lg mb-4">
-        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Terapia Individual</h3>
-        <p class="text-gray-600 mb-4">
-          Sesiones personalizadas para abordar problemas de ansiedad, depresión, estrés, duelos y crecimiento personal.
-        </p>
-        <ul class="list-disc list-inside text-gray-700 mb-4">
-          <li>Manejo de Ansiedad y Estrés</li>
-          <li>Terapia para la Depresión</li>
-          <li>Apoyo en Duelos</li>
-          <li>Desarrollo Personal</li>
-        </ul>
-        <button class="btn-primary-small" (click)="solicitarCita('Terapia Individual')" aria-label="Solicitar cita para Terapia Individual">Solicitar Cita</button>
-      </div>
-      <div class="service-detail-card">
-        <img src="https://placehold.co/400x250/D1C4E9/000000?text=Terapia+de+Pareja" alt="Terapia de Pareja" loading="lazy" class="rounded-t-lg mb-4">
-        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Terapia de Pareja</h3>
-        <p class="text-gray-600 mb-4">
-          Ayudamos a las parejas a mejorar la comunicación, resolver conflictos y fortalecer su relación.
-        </p>
-        <ul class="list-disc list-inside text-gray-700 mb-4">
-          <li>Mejora de la Comunicación</li>
-          <li>Resolución de Conflictos</li>
-          <li>Fortalecimiento de Vínculos</li>
-          <li>Terapia Prematrimonial</li>
-        </ul>
-        <button class="btn-primary-small" (click)="solicitarCita('Terapia de Pareja')" aria-label="Solicitar cita para Terapia de Pareja">Solicitar Cita</button>
-      </div>
-      <div class="service-detail-card">
-        <img src="https://placehold.co/400x250/D1C4E9/000000?text=Terapia+Familiar" alt="Terapia Familiar" loading="lazy" class="rounded-t-lg mb-4">
-        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Terapia Familiar</h3>
-        <p class="text-gray-600 mb-4">
-          Intervenciones para mejorar la dinámica familiar, afrontar cambios y superar Crisis.
-        </p>
-        <ul class="list-disc list-inside text-gray-700 mb-4">
-          <li>Dinámicas Familiares</li>
-          <li>Adaptación a Cambios</li>
-          <li>Apoyo en Crisis Familiares</li>
-          <li>Comunicación Familiar</li>
-        </ul>
-        <button class="btn-primary-small" (click)="solicitarCita('Terapia Familiar')" aria-label="Solicitar cita para Terapia Familiar">Solicitar Cita</button>
-      </div>
-      <div class="service-detail-card">
-        <img src="https://placehold.co/400x250/D1C4E9/000000?text=Psicolog%C3%ADa+Infantil" alt="Psicología Infantil y Adolescente" loading="lazy" class="rounded-t-lg mb-4">
-        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Psicología Infantil y Adolescente</h3>
-        <p class="text-gray-600 mb-4">
-          Apoyo a niños y adolescentes en el manejo de emociones, problemas de conducta y desarrollo.
-        </p>
-        <ul class="list-disc list-inside text-gray-700 mb-4">
-          <li>Problemas de Conducta</li>
-          <li>Manejo de Emociones</li>
-          <li>Dificultades de Aprendizaje</li>
-          <li>Orientación a Padres</li>
-        </ul>
-        <button class="btn-primary-small" (click)="solicitarCita('Psicología Infantil')" aria-label="Solicitar cita para Psicología Infantil">Solicitar Cita</button>
-      </div>
+<!-- CTA final servicios -->
+<section class="bg-gradient-to-r from-blue-600 to-indigo-600">
+  <div class="container mx-auto px-4 py-12 text-center text-white">
+    <h3 class="text-2xl md:text-3xl font-bold mb-4">¿Listo para empezar tu tratamiento?</h3>
+    <p class="text-blue-100 mb-6">Agenda tu cita y recibe una evaluación integral.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a routerLink="/contacto" class="inline-flex items-center gap-2 rounded-xl bg-white/10 px-5 py-3 text-white border border-white/20 hover:bg-white/20 transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        Llamar
+      </a>
+      <a href="https://api.whatsapp.com/send/?phone=573014218455" target="_blank" class="inline-flex items-center gap-2 rounded-xl bg-green-500 px-5 py-3 text-white font-semibold shadow-md hover:bg-green-600">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15a4 4 0 01-4 4H7l-4 4V7a4 4 0 014-4h10a4 4 0 014 4v8z"/></svg>
+        WhatsApp
+      </a>
     </div>
   </div>
 </section>

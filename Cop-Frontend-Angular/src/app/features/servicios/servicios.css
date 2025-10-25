@@ -1,0 +1,345 @@
+/* Estilos específicos para la página de Servicios */
+
+/* Hero Section */
+.services-hero {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><path d="M0,0 Q250,50 500,25 T1000,0 L1000,100 L0,100 Z"/></svg>') no-repeat bottom;
+  background-size: cover;
+}
+
+.services-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.services-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  animation: fadeInDown 1s ease-out;
+}
+
+.services-hero p {
+  font-size: 1.25rem;
+  opacity: 0.9;
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+/* Service Categories */
+.service-category {
+  padding: 4rem 0;
+  position: relative;
+}
+
+.service-category:nth-child(even) {
+  background: #f8fafc;
+}
+
+.service-category h2 {
+  color: #2d3748;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.service-category h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  border-radius: 2px;
+}
+
+/* Odontología - Color azul */
+#odontologia h2::after {
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+}
+
+/* Psicología - Color púrpura */
+#psicologia h2::after {
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+}
+
+/* Service Detail Cards */
+.service-detail-card {
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #e2e8f0;
+}
+
+.service-detail-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+/* Diferentes colores para cada categoría */
+#psicologia .service-detail-card::before {
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+}
+
+.service-detail-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-detail-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.service-detail-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-detail-card:hover img {
+  transform: scale(1.05);
+}
+
+.service-detail-card h3 {
+  color: #2d3748;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.5rem 1.5rem 1rem 1.5rem;
+  position: relative;
+}
+
+.service-detail-card p {
+  color: #718096;
+  line-height: 1.6;
+  margin: 0 1.5rem 1rem 1.5rem;
+  font-size: 0.95rem;
+}
+
+.service-detail-card ul {
+  margin: 0 1.5rem 1.5rem 1.5rem;
+  color: #4a5568;
+}
+
+.service-detail-card ul li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.service-detail-card ul li::marker {
+  color: #4facfe;
+}
+
+#psicologia .service-detail-card ul li::marker {
+  color: #a855f7;
+}
+
+/* Botones */
+.btn-primary-small {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 1.5rem 1.5rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary-small::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary-small:hover::before {
+  left: 100%;
+}
+
+.btn-primary-small:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(79, 172, 254, 0.4);
+}
+
+#psicologia .btn-primary-small {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+}
+
+#psicologia .btn-primary-small:hover {
+  box-shadow: 0 10px 25px rgba(168, 85, 247, 0.4);
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efectos de scroll */
+.service-detail-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.service-detail-card:nth-child(1) { animation-delay: 0.1s; }
+.service-detail-card:nth-child(2) { animation-delay: 0.2s; }
+.service-detail-card:nth-child(3) { animation-delay: 0.3s; }
+.service-detail-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .services-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .services-hero p {
+    font-size: 1.125rem;
+  }
+  
+  .service-category h2 {
+    font-size: 2rem;
+  }
+  
+  .service-detail-card {
+    margin-bottom: 2rem;
+  }
+  
+  .service-detail-card h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-hero {
+    min-height: 40vh;
+    padding: 2rem 0;
+  }
+  
+  .services-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .service-category {
+    padding: 2rem 0;
+  }
+  
+  .service-category h2 {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .service-detail-card img {
+    height: 150px;
+  }
+}
+
+/* Efectos adicionales para mejorar la experiencia */
+.service-category {
+  scroll-margin-top: 100px; /* Para navegación con anclas */
+}
+
+/* Hover effects para mejor interactividad */
+.service-detail-card {
+  cursor: pointer;
+}
+
+.service-detail-card:hover h3 {
+  color: #4facfe;
+}
+
+#psicologia .service-detail-card:hover h3 {
+  color: #a855f7;
+}
+
+/* Iconos de servicio (SVG) */
+.service-detail-card .service-icon {
+  width: 80px;
+  height: 80px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  margin: 1.25rem 1.5rem 0.5rem 1.5rem;
+  background: #eff6ff; /* azul muy claro */
+  color: #2563eb; /* azul primario */
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#psicologia .service-detail-card .service-icon {
+  background: #f5f3ff; /* púrpura muy claro */
+  color: #7c3aed; /* púrpura */
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.15);
+}
+
+.service-detail-card .service-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.service-detail-card:hover .service-icon {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Ajuste de imagen para evitar huecos si no hay <img> */
+.service-detail-card img {
+  display: none;
+}

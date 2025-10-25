@@ -1,18 +1,343 @@
-<section class="hero-section" role="region" aria-labelledby="home-hero-title">
-  <div class="container mx-auto text-center py-20">
-    <h1 id="home-hero-title" class="text-5xl font-bold text-gray-800 mb-4">Bienvenido a Nuestro Centro</h1>
-    <p class="text-xl text-gray-600 mb-8">Cuidado integral para tu salud dental y bienestar mental.</p>
-    <div class="flex gap-4 justify-center">
-      <a routerLink="/servicios" class="btn-primary" aria-label="Ver nuestros servicios">Explora Nuestros Servicios</a>
-      <a routerLink="/citas" class="btn-secondary" aria-label="Solicitar una cita">Solicitar Cita</a>
+<!-- Hero Section Médico Profesional -->
+<section class="relative bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white overflow-hidden" role="region" aria-labelledby="home-hero-title">
+  <!-- Patrón de fondo médico -->
+  <div class="absolute inset-0 opacity-10">
+    <svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="medical-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+          <circle cx="10" cy="10" r="1" fill="currentColor"/>
+          <path d="M8 10h4M10 8v4" stroke="currentColor" stroke-width="0.5"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#medical-pattern)"/>
+    </svg>
+  </div>
+  
+  <div class="relative container mx-auto px-4 py-20 lg:py-28">
+    <div class="text-center max-w-4xl mx-auto">
+      <!-- Icono médico principal -->
+      <div class="mb-8 flex justify-center">
+        <div class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+          </svg>
+        </div>
+      </div>
+      
+      <h1 id="home-hero-title" class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+        Tu Salud es Nuestra 
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-300">Prioridad</span>
+      </h1>
+      
+      <p class="text-xl md:text-2xl opacity-90 mb-8 max-w-3xl mx-auto leading-relaxed">
+        Centro médico integral especializado en odontología y psicología. 
+        <span class="font-semibold">Más de 5 años</span> cuidando tu bienestar con tecnología de vanguardia.
+      </p>
+      
+      <!-- Estadísticas médicas -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10 max-w-2xl mx-auto">
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-cyan-300">500+</div>
+          <div class="text-sm opacity-80">Pacientes Atendidos</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-cyan-300">98%</div>
+          <div class="text-sm opacity-80">Satisfacción</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-cyan-300">5+</div>
+          <div class="text-sm opacity-80">Años Experiencia</div>
+        </div>
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-cyan-300">24/7</div>
+          <div class="text-sm opacity-80">Emergencias</div>
+        </div>
+      </div>
+      
+      <!-- Botones de acción mejorados -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a routerLink="/citas" class="group inline-flex items-center gap-3 rounded-full bg-white text-blue-700 px-8 py-4 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300" aria-label="Agendar cita médica">
+          <svg class="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+          Agendar Cita
+        </a>
+        <a routerLink="/servicios" class="group inline-flex items-center gap-3 rounded-full bg-white/10 text-white px-8 py-4 font-semibold text-lg backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300" aria-label="Ver nuestros servicios médicos">
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+          Ver Servicios
+        </a>
+      </div>
+      
+      <!-- Indicador de confianza -->
+      <div class="mt-12 flex items-center justify-center gap-2 text-sm opacity-75">
+        <svg class="w-4 h-4 text-green-300" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span>Centro médico certificado y habilitado</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Onda decorativa -->
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-full h-12 fill-slate-50">
+      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"/>
+      <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5"/>
+      <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"/>
+    </svg>
+  </div>
+</section>
+
+<!-- Testimonios de Pacientes -->
+<section class="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-20">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+        </svg>
+        Testimonios Reales
+      </div>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        Lo que dicen nuestros <span class="text-blue-600">pacientes</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Miles de pacientes confían en nosotros. Conoce sus experiencias y resultados exitosos.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      <!-- Testimonio 1 -->
+      <div class="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2">
+        <div class="flex items-center gap-1 mb-6">
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+        </div>
+        
+        <blockquote class="text-gray-700 text-lg leading-relaxed mb-6 italic">
+          "El tratamiento de ortodoncia cambió completamente mi vida. El equipo fue profesional y los resultados superaron mis expectativas. ¡Recomiendo totalmente este centro médico!"
+        </blockquote>
+        
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+            M
+          </div>
+          <div>
+            <div class="font-semibold text-gray-900">María González</div>
+            <div class="text-sm text-gray-500">Paciente de Ortodoncia</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonio 2 -->
+      <div class="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2">
+        <div class="flex items-center gap-1 mb-6">
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+        </div>
+        
+        <blockquote class="text-gray-700 text-lg leading-relaxed mb-6 italic">
+          "Las sesiones de psicología me ayudaron enormemente a superar mis problemas de ansiedad. El psicólogo fue muy empático y profesional. Estoy muy agradecido."
+        </blockquote>
+        
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+            C
+          </div>
+          <div>
+            <div class="font-semibold text-gray-900">Carlos Rodríguez</div>
+            <div class="text-sm text-gray-500">Paciente de Psicología</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonio 3 -->
+      <div class="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2">
+        <div class="flex items-center gap-1 mb-6">
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+          <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+          <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+        </div>
+        
+        <blockquote class="text-gray-700 text-lg leading-relaxed mb-6 italic">
+          "Excelente atención dental. La limpieza fue muy profesional y me explicaron todo el proceso. Las instalaciones son modernas y el personal muy amable."
+        </blockquote>
+        
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+            A
+          </div>
+          <div>
+            <div class="font-semibold text-gray-900">Ana Martínez</div>
+            <div class="text-sm text-gray-500">Paciente de Odontología</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Estadísticas de Satisfacción -->
+    <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+        <div class="group">
+          <div class="text-4xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform">98%</div>
+          <div class="text-gray-600 font-medium">Satisfacción del Paciente</div>
+        </div>
+        <div class="group">
+          <div class="text-4xl font-bold text-purple-600 mb-2 group-hover:scale-110 transition-transform">2,500+</div>
+          <div class="text-gray-600 font-medium">Pacientes Atendidos</div>
+        </div>
+        <div class="group">
+          <div class="text-4xl font-bold text-emerald-600 mb-2 group-hover:scale-110 transition-transform">15+</div>
+          <div class="text-gray-600 font-medium">Años de Experiencia</div>
+        </div>
+        <div class="group">
+          <div class="text-4xl font-bold text-orange-600 mb-2 group-hover:scale-110 transition-transform">24/7</div>
+          <div class="text-gray-600 font-medium">Atención de Emergencias</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="about-us-preview" role="region" aria-labelledby="about-preview-title">
+<!-- Llamada a la Acción para Citas Médicas -->
+<section class="bg-gradient-to-r from-blue-600 via-blue-700 to-purple-700 py-20 relative overflow-hidden">
+  <!-- Elementos decorativos de fondo -->
+  <div class="absolute inset-0">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full -translate-x-48 -translate-y-48"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-48 translate-y-48"></div>
+    <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-white/5 rounded-full -translate-x-32 -translate-y-32"></div>
+  </div>
+  
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        Agenda tu Cita Hoy
+      </div>
+      
+      <!-- Título Principal -->
+      <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+        Tu Salud es Nuestra
+        <span class="block text-yellow-300">Prioridad</span>
+      </h2>
+      
+      <!-- Descripción -->
+      <p class="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+        Reserva tu cita médica de forma rápida y sencilla. Nuestro equipo de especialistas está listo para brindarte la mejor atención.
+      </p>
+      
+      <!-- Beneficios Rápidos -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-2xl p-4">
+          <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <div class="text-left">
+            <div class="text-white font-semibold">Cita Inmediata</div>
+            <div class="text-blue-200 text-sm">Disponibilidad hoy</div>
+          </div>
+        </div>
+        
+        <div class="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-2xl p-4">
+          <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <div class="text-left">
+            <div class="text-white font-semibold">Especialistas</div>
+            <div class="text-blue-200 text-sm">Certificados</div>
+          </div>
+        </div>
+        
+        <div class="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-2xl p-4">
+          <div class="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center flex-shrink-0">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+            </svg>
+          </div>
+          <div class="text-left">
+            <div class="text-white font-semibold">Precios Justos</div>
+            <div class="text-blue-200 text-sm">Sin sorpresas</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Botones de Acción -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a routerLink="/citas" class="group inline-flex items-center gap-3 bg-white text-blue-700 px-8 py-4 rounded-full font-bold text-lg shadow-2xl hover:bg-gray-50 hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300 min-w-[200px] justify-center">
+          <svg class="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+          Agendar Cita
+        </a>
+        
+        <a href="tel:+573001234567" class="group inline-flex items-center gap-3 bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-700 transition-all duration-300 min-w-[200px] justify-center">
+          <svg class="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+          Llamar Ahora
+        </a>
+      </div>
+      
+      <!-- Información de Contacto Rápido -->
+      <div class="mt-8 text-blue-100">
+        <p class="text-lg mb-2">📞 <strong>Línea Directa:</strong> +57 300 123 4567</p>
+        <p class="text-sm">Atención de emergencias 24/7 • Respuesta inmediata</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-slate-50" role="region" aria-labelledby="about-preview-title">
   <div class="container mx-auto flex flex-col md:flex-row items-center justify-center py-16">
     <div class="md:w-1/2 p-4">
-      <img src="assets/IMG/Captura de pantalla 2025-05-29 150338.png" alt="Cuidado Integral" loading="lazy" class="rounded-lg shadow-lg">
+      <img src="assets/IMG/Captura de pantalla 2025-05-29 150338.png" alt="Cuidado Integral" loading="lazy" decoding="async" class="pro-img img-cover rounded-2xl shadow-xl">
     </div>
     <div class="md:w-1/2 p-4">
       <h2 id="about-preview-title" class="text-4xl font-bold text-gray-800 mb-4">¿Quiénes Somos?</h2>
@@ -20,35 +345,133 @@
         Somos un equipo de profesionales dedicados a ofrecer soluciones de salud oral y apoyo psicológico. Creemos en un enfoque holístico para tu bienestar, combinando la experiencia clínica con un trato humano y personalizado.
       </p>
       <div class="flex gap-4">
-        <a routerLink="/nosotros" class="btn-secondary" aria-label="Conocer más sobre el centro">Conoce Más Sobre Nosotros</a>
-        <a routerLink="/servicios" fragment="odontologia" class="btn-primary" aria-label="Ver servicios odontológicos">Servicios Odontológicos</a>
+        <a routerLink="/nosotros" class="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-5 py-2.5 text-white font-semibold shadow-sm hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900" aria-label="Conocer más sobre el centro">Conoce Más Sobre Nosotros</a>
+        <a routerLink="/servicios" fragment="odontologia" class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 text-white font-semibold shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600" aria-label="Ver servicios odontológicos">Servicios Odontológicos</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="services-preview">
-  <div class="container mx-auto py-16 text-center">
-    <h2 class="text-4xl font-bold text-gray-800 mb-12">Nuestros Servicios Destacados</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="service-card">
-        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Odontología General</h3>
-        <p class="text-gray-600 mb-4">Revisiones, limpiezas, empastes y más para mantener tu sonrisa saludable.</p>
-        <a routerLink="/servicios" fragment="odontologia" class="text-blue-600 hover:underline">Ver más</a>
+<!-- Servicios Médicos Profesionales -->
+<section class="services-preview bg-white py-20">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        Servicios Especializados
       </div>
-      <div class="service-card">
-        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Psicología Clínica</h3>
-        <p class="text-gray-600 mb-4">Sesiones individuales para abordar ansiedad, estrés y otros desafíos emocionales.</p>
-        <a routerLink="/servicios" fragment="psicologia" class="text-blue-600 hover:underline">Ver más</a>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        Cuidado Médico <span class="text-blue-600">Integral</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Ofrecemos atención especializada con los más altos estándares de calidad y tecnología médica avanzada.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      <!-- Odontología General -->
+      <div class="group relative bg-white rounded-3xl border border-gray-100 p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50 to-blue-100 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-500"></div>
+        
+        <div class="relative">
+          <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+            </svg>
+          </div>
+          
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Odontología General</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Cuidado dental completo con tecnología de vanguardia. Desde limpiezas hasta tratamientos especializados.
+          </p>
+          
+          <div class="flex items-center justify-between">
+            <a routerLink="/servicios" fragment="odontologia" class="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors">
+              Ver detalles
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <div class="text-sm text-gray-500">Desde $50.000</div>
+          </div>
+        </div>
       </div>
-      <div class="service-card">
-        <h3 class="text-2xl font-semibold text-gray-800 mb-3">Ortodoncia</h3>
-        <p class="text-gray-600 mb-4">Soluciones avanzadas para alinear tus dientes y mejorar tu mordida.</p>
-        <a routerLink="/servicios" fragment="ortodoncia" class="text-blue-600 hover:underline">Ver más</a>
+      
+      <!-- Psicología Clínica -->
+      <div class="group relative bg-white rounded-3xl border border-gray-100 p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-50 to-purple-100 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-500"></div>
+        
+        <div class="relative">
+          <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Psicología Clínica</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Apoyo psicológico profesional para tu bienestar mental. Terapias individuales y especializadas.
+          </p>
+          
+          <div class="flex items-center justify-between">
+            <a routerLink="/servicios" fragment="psicologia" class="inline-flex items-center gap-2 text-purple-600 font-semibold hover:text-purple-700 transition-colors">
+              Ver detalles
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <div class="text-sm text-gray-500">Desde $80.000</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Ortodoncia -->
+      <div class="group relative bg-white rounded-3xl border border-gray-100 p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-500"></div>
+        
+        <div class="relative">
+          <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          
+          <h3 class="text-2xl font-bold text-gray-900 mb-3">Ortodoncia</h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Tratamientos ortodónticos modernos para una sonrisa perfecta. Brackets tradicionales e invisibles.
+          </p>
+          
+          <div class="flex items-center justify-between">
+            <a routerLink="/servicios" fragment="ortodoncia" class="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
+              Ver detalles
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <div class="text-sm text-gray-500">Desde $120.000</div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="mt-12">
-      <a routerLink="/servicios" class="btn-primary">Ver Todos los Servicios</a>
+    
+    <!-- CTA Section -->
+    <div class="text-center">
+      <div class="inline-flex flex-col sm:flex-row gap-4">
+        <a routerLink="/servicios" class="inline-flex items-center gap-3 rounded-full bg-blue-600 text-white px-8 py-4 font-bold text-lg shadow-xl hover:bg-blue-700 hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+          </svg>
+          Ver Todos los Servicios
+        </a>
+        <a routerLink="/citas" class="inline-flex items-center gap-3 rounded-full bg-gray-100 text-gray-700 px-8 py-4 font-semibold text-lg hover:bg-gray-200 transition-all duration-300">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+          Contactar Ahora
+        </a>
+      </div>
     </div>
   </div>
 </section>

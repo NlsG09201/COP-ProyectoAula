@@ -1,22 +1,28 @@
 # ProyectoAula
 
 Proyecto full-stack para gestión odontológica con:
-- Frontend Angular (`Cop-Frontend-Angular`)
+- Frontend Angular (`Cop-Frontend-Angular` y `DashBoard-COP`)
 - Backend Spring Boot (`Backend`)
 - Worker Spring Boot para tareas programadas (`Worker`)
-- Base de datos MySQL (remoto)
+- Base de datos MySQL y MongoDB
+- Sistema de testimonios y calificaciones
+- Gestión de odontogramas
 
 ## Estructura
 - `Backend/`: API REST (Java 17, Spring Boot)
-- `Cop-Frontend-Angular/`: UI web (Angular 16+, Node 20)
+- `Cop-Frontend-Angular/`: UI web pública (Angular 16+, Node 20)
+- `DashBoard-COP/`: Panel de administración (Angular 16+)
 - `Worker/`: Recordatorios de citas (scheduler + correo)
-- `Backend.sql`: Script de base de datos (si aplica)
+- `Backend.sql`: Script inicial de MySQL
+- `db-init/`: Scripts de inicialización de MySQL
+- `mongo-init/`: Scripts de inicialización de MongoDB
+- `docker-compose.yml`: Configuración de contenedores
 
 ## Prerrequisitos
 - `Java 17` y `Maven` (o Maven Wrapper `mvnw`)
 - `Node 20.19.0` y `@angular/cli`
-- `Docker` (opcional para despliegue)
-- Acceso a MySQL remoto y whitelist de IP en el proveedor
+- `Docker` y `docker-compose` para despliegue
+- Docker Desktop (Windows/Mac) o Docker Engine (Linux)
 
 ## Configuración de Base de Datos (Backend)
 Usa variables de entorno para credenciales y evita poner contraseñas en texto plano.
@@ -55,6 +61,9 @@ Endpoints principales (`/api`):
 - `GET /api/odontogramas` | `GET /api/odontogramas/{id}` | `POST/PUT/DELETE`
 - `GET /api/detalles-odontograma` | `GET /api/detalles-odontograma/{id}`
 - `GET /api/citas` | `GET /api/citas/{id}` | `POST/PUT/DELETE`
+- `GET /api/testimonios` | `GET /api/testimonios/{id}` | `POST/PUT/DELETE`
+- `GET /api/testimonios/servicio/{servicioId}` | Testimonios por servicio
+- `GET /api/testimonios/calificacion/{rating}` | Filtrar por calificación
 
 CORS: controladores con `@CrossOrigin(origins = "*")` para facilitar desarrollo.
 
@@ -101,28 +110,68 @@ java -jar target/Worker-0.0.1-SNAPSHOT.jar
 ```
 - El scheduler corre diario 07:00; puedes probar con un cron más frecuente.
 
-## Despliegue del Backend con Docker (opcional)
-Hay un `Dockerfile` en `Backend/` que construye el jar dentro de la imagen:
+## Despliegue con Docker Compose
+El proyecto incluye un archivo `docker-compose.yml` que configura todos los servicios necesarios:
+
+```bash
+# Construir todas las imágenes
+docker-compose build
+
+# Iniciar todos los servicios
+docker-compose up -d
+
+# Ver logs
+docker-compose logs -f
+
+# Detener servicios
+docker-compose down
 ```
-cd Backend
-docker build -t backend-app:latest .
-docker run -d -p 8080:8080 --name backend-app backend-app:latest
-```
-Asegura variables de entorno para DB en despliegue.
+
+Servicios incluidos:
+- MySQL (puerto 3306)
+- MongoDB (puerto 27017)
+- Backend Spring Boot (puerto 8080)
+- Frontend público (puerto 80)
+- Panel de administración (puerto 4200)
+- Worker para recordatorios
+
+Las credenciales y configuraciones están definidas en el `docker-compose.yml`.
+
+### Volúmenes Persistentes
+- `mysql_data`: Datos de MySQL
+- `mongodb_data`: Datos de MongoDB
+
+### Redes
+- `cop_net`: Red interna para comunicación entre servicios
 
 ## Solución de Problemas
-- Error `HikariPool` al arrancar backend:
-  - Verifica credenciales y whitelist de IP.
-  - Prueba conectividad: `Test-NetConnection <host> -Port 3306`.
-  - Si usas hostname con SSL, requiere certificado válido y `useSSL=true`.
-- CORS en Angular dev:
-  - Usa `proxy.conf.json`; no llames directamente `http://localhost:8080` desde el navegador.
+- Error de conexión a bases de datos:
+  - Verifica que los contenedores estén corriendo: `docker-compose ps`
+  - Revisa logs: `docker-compose logs mysql` o `docker-compose logs mongodb`
+  - Asegúrate que los scripts de inicialización tengan permisos: `chmod +x db-init/*.sql`
+- CORS en desarrollo:
+  - Usa `proxy.conf.json` en ambos frontends
+  - Verifica la configuración de CORS en el Backend
+- Problemas con Docker:
+  - Limpia contenedores: `docker-compose down -v`
+  - Reconstruye imágenes: `docker-compose build --no-cache`
+  - Verifica espacio en disco: `docker system df`
 
 ## Seguridad
 - Evita almacenar contraseñas en texto plano en el repo.
 - Usa perfiles (`spring.profiles.active`) y variables de entorno para producción.
 
+## Características Implementadas
+- Sistema de testimonios con calificación por estrellas
+- Panel de administración separado del frontend público
+- Persistencia multi-base de datos (MySQL + MongoDB)
+- Contenedores Docker para todos los servicios
+- Odontograma interactivo
+- Sistema de recordatorios de citas
+
 ## Próximos Pasos
-- Añadir perfiles `dev` (H2/local) y `prod` (MySQL remoto).
-- Integrar autenticación (Spring Security) si se requiere.
-- CI/CD para build y despliegue automático.
+- Implementar autenticación y autorización
+- Añadir pruebas automatizadas
+- Configurar CI/CD con GitHub Actions
+- Mejorar la documentación de API con Swagger
+- Implementar monitoreo y logs centralizados

@@ -6,8 +6,6 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "DIENTES")
-@Getter
-@Setter
 public class Diente {
 
     @Id
@@ -19,4 +17,28 @@ public class Diente {
 
     @Column(nullable = false)
     private String nombre;     // Ejemplo: Incisivo central superior derecho
+
+    public Long getIdDiente() {
+        return idDiente;
+    }
+
+    public void setIdDiente(Long idDiente) {
+        this.idDiente = idDiente;
+    }
+
+    public String getCodigoFDI() {
+        return codigoFDI;
+    }
+
+    public void setCodigoFDI(String codigoFDI) {
+        this.codigoFDI = codigoFDI;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 }

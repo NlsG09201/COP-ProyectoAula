@@ -16,6 +16,10 @@ services:
     networks:
       - cop_net
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 10
     command: --default-authentication-plugin=mysql_native_password
 
   # Base de datos MongoDB para el worker
@@ -76,12 +80,22 @@ services:
     build:
       context: ./Cop-Frontend-Angular
       dockerfile: Dockerfile
-      args:
-        NODE_VERSION: 20.19.0
-        APP_NAME: cop-frontend-angular
-    container_name: front
+    container_name: frontend
     ports:
-      - "8081:80"
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - cop_net
+    restart: unless-stopped
+
+  dashboard:
+    build:
+      context: ./DashBoard-COP
+      dockerfile: Dockerfile
+    container_name: dashboard
+    ports:
+      - "4200:4200"
     depends_on:
       - backend
     networks:

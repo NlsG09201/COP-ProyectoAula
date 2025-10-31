@@ -8,8 +8,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "ODONTOGRAMAS")
-@Getter
-@Setter
 public class Odontograma {
 
     @Id
@@ -28,4 +26,44 @@ public class Odontograma {
 
     @OneToMany(mappedBy = "odontograma", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<DetalleOdontograma> detalles;
+
+    public Long getIdOdontograma() {
+        return idOdontograma;
+    }
+
+    public void setIdOdontograma(Long idOdontograma) {
+        this.idOdontograma = idOdontograma;
+    }
+
+    public LocalDate getFechaRegistro() {
+        return fechaRegistro;
+    }
+
+    public void setFechaRegistro(LocalDate fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
+    }
+
+    public String getObservacionesGenerales() {
+        return observacionesGenerales;
+    }
+
+    public void setObservacionesGenerales(String observacionesGenerales) {
+        this.observacionesGenerales = observacionesGenerales;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
+    public List<DetalleOdontograma> getDetalles() {
+        return detalles;
+    }
+
+    public void setDetalles(List<DetalleOdontograma> detalles) {
+        this.detalles = detalles;
+    }
 }

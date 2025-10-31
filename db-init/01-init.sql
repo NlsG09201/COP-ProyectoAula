@@ -127,3 +127,19 @@ CREATE TABLE IF NOT EXISTS `DETALLE_ODONTOGRAMA` (
   UNIQUE KEY `UQ_Diente_Odontograma` (`ID_Odontograma`, `ID_Diente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- ============================================================
+-- TABLA: TESTIMONIOS
+-- ============================================================
+CREATE TABLE IF NOT EXISTS `TESTIMONIOS` (
+  `ID_Testimonio` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `Nombre` VARCHAR(150) NOT NULL,
+  `Comentario` TEXT NOT NULL,
+  `Calificacion` TINYINT NOT NULL CHECK (Calificacion BETWEEN 1 AND 5),
+  `FechaCreacion` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `ID_Servicio` INT UNSIGNED NOT NULL,
+  CONSTRAINT `FK_TESTIMONIO_SERVICIO`
+    FOREIGN KEY (`ID_Servicio`) REFERENCES `SERVICIOS` (`ID_Servicio`)
+    ON DELETE CASCADE ON UPDATE CASCADE,
+  INDEX `idx_fecha` (`FechaCreacion`),
+  INDEX `idx_calificacion` (`Calificacion`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

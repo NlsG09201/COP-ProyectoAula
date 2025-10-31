@@ -2,7 +2,7 @@ package com.ProyectoAula.Backend.controller;
 
 import com.ProyectoAula.Backend.model.Cita;
 import com.ProyectoAula.Backend.service.AiAgentService;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,11 +11,11 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/ai")
-@RequiredArgsConstructor
 @CrossOrigin(origins = "*")
 public class AiAgentController {
 
-    private final AiAgentService aiAgentService;
+    @Autowired
+    private AiAgentService aiAgentService;
 
     @PostMapping("/schedule")
     public ResponseEntity<List<Cita>> organize(@RequestBody List<Cita> citas) {

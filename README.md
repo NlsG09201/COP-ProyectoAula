@@ -7,6 +7,9 @@ Proyecto full-stack para gestión odontológica con:
 - Base de datos MySQL y MongoDB
 - Sistema de testimonios y calificaciones
 - Gestión de odontogramas
+- Chatbot IA para atención al cliente
+- Sistema de notificaciones por correo
+- Interfaz moderna y responsive
 
 ## Estructura
 - `Backend/`: API REST (Java 17, Spring Boot)
@@ -23,6 +26,8 @@ Proyecto full-stack para gestión odontológica con:
 - `Node 20.19.0` y `@angular/cli`
 - `Docker` y `docker-compose` para despliegue
 - Docker Desktop (Windows/Mac) o Docker Engine (Linux)
+- API Key de OpenAI para el chatbot
+- Cuenta de servicio de correo (SendGrid/SMTP)
 
 ## Configuración de Base de Datos (Backend)
 Usa variables de entorno para credenciales y evita poner contraseñas en texto plano.
@@ -75,7 +80,34 @@ npm install
 ng serve --proxy-config proxy.conf.json
 ```
 - Proxy `proxy.conf.json` redirige `/api` → `http://localhost:8080`
-- Ajusta `src/environments/*.ts` para `apiUrl` cuando despliegues.
+- Ajusta `src/environments/*.ts` para configurar:
+  - `apiUrl`: URL del backend
+  - `openaiApiKey`: Tu API key de OpenAI
+  - `emailService`: Configuración del servicio de correo
+  - `socialMedia`: Enlaces a redes sociales
+
+### Configuración del Chatbot
+El sistema incluye un chatbot impulsado por IA que requiere configuración en `environment.ts`:
+```typescript
+export const environment = {
+  // ... otras configuraciones ...
+  openaiApiKey: 'tu-api-key-aqui',
+  emailService: {
+    apiKey: 'tu-email-service-api-key',
+    fromEmail: 'no-reply@tudominio.com'
+  }
+};
+```
+
+### Redes Sociales
+Configura los enlaces a redes sociales en `environment.ts`:
+```typescript
+socialMedia: {
+  facebook: 'https://facebook.com/tuclínica',
+  instagram: 'https://instagram.com/tuclínica',
+  twitter: 'https://twitter.com/tuclínica',
+  whatsapp: 'https://wa.me/tucélular'
+}
 
 Docker (producción estática con Nginx):
 ```
@@ -156,6 +188,14 @@ Las credenciales y configuraciones están definidas en el `docker-compose.yml`.
   - Limpia contenedores: `docker-compose down -v`
   - Reconstruye imágenes: `docker-compose build --no-cache`
   - Verifica espacio en disco: `docker system df`
+- Problemas con el Chatbot:
+  - Verifica la API key de OpenAI en environment.ts
+  - Revisa los logs del servicio: `docker-compose logs frontend`
+  - Asegura conexión a internet estable
+- Problemas con Notificaciones:
+  - Verifica configuración SMTP
+  - Revisa logs del Worker: `docker-compose logs worker`
+  - Comprueba permisos de envío de correo
 
 ## Seguridad
 - Evita almacenar contraseñas en texto plano en el repo.
@@ -168,6 +208,19 @@ Las credenciales y configuraciones están definidas en el `docker-compose.yml`.
 - Contenedores Docker para todos los servicios
 - Odontograma interactivo
 - Sistema de recordatorios de citas
+- Chatbot IA para atención al cliente
+  - Consultas de servicios y precios
+  - Asistencia en programación de citas
+  - Respuestas personalizadas
+- Sistema de notificaciones por correo
+  - Confirmación automática de citas
+  - Recordatorios de citas
+  - Notificaciones personalizadas
+- Interfaz moderna y responsive
+  - Diseño limpio y profesional
+  - Visualización optimizada de servicios y precios
+  - Integración de redes sociales
+  - Adaptable a todos los dispositivos
 
 ## Próximos Pasos
 - Implementar autenticación y autorización
@@ -175,3 +228,15 @@ Las credenciales y configuraciones están definidas en el `docker-compose.yml`.
 - Configurar CI/CD con GitHub Actions
 - Mejorar la documentación de API con Swagger
 - Implementar monitoreo y logs centralizados
+- Expandir capacidades del chatbot IA
+  - Integración con más servicios de IA
+  - Análisis de sentimientos en testimonios
+  - Recomendaciones personalizadas
+- Mejoras en el sistema de notificaciones
+  - Plantillas de correo personalizables
+  - Notificaciones push
+  - Integración con WhatsApp Business API
+- Analíticas y reportes
+  - Dashboard de satisfacción del cliente
+  - Métricas de uso del chatbot
+  - Reportes de conversión

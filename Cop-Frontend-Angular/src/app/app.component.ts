@@ -11,35 +11,86 @@ import { IaAgentWidgetComponent } from './shared/components/ia-agent-widget/ia-a
   standalone: true,
   imports: [RouterModule, CommonModule, IaAgentWidgetComponent],
   template: `
-    <header class="sticky top-0 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm z-50" *ngIf="!isDashboardSection">
-      <div class="max-w-screen-xl mx-auto px-4 flex justify-between items-center py-3">
-        <div class="logo flex items-center">
-          <img src="assets/IMG/Logo.png" alt="Logo Centro Odontológico y Psicológico" class="h-10 md:h-12 lg:h-14 w-auto rounded-lg shadow-md">
-          <span class="ml-3 text-2xl font-bold text-slate-800">COP</span>
+    <header class="fixed w-full top-0 bg-white/90 backdrop-blur-sm border-b border-slate-100 shadow-sm z-50" *ngIf="!isDashboardSection">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="flex justify-between items-center py-2 md:py-3">
+          <!-- Logo y Nombre -->
+          <div class="flex justify-start">
+            <a href="/" class="flex items-center">
+              <img src="assets/IMG/Logo.png" alt="Logo Centro Odontológico y Psicológico" 
+                   class="h-7 w-auto md:h-8 object-contain rounded-md">
+              <span class="ml-2 text-lg font-semibold text-slate-800 hidden sm:block">COP</span>
+            </a>
+          </div>
+
+          <!-- Navegación Desktop -->
+          <nav class="hidden md:flex items-center space-x-1">
+            <a routerLink="/home" 
+               class="nav-link px-3 py-2 text-sm font-medium text-slate-700 rounded-md hover:bg-slate-50 hover:text-blue-600 transition-colors duration-200" 
+               [class.active]="isActiveRoute('/home')">Inicio</a>
+            <a routerLink="/servicios" 
+               class="nav-link px-3 py-2 text-sm font-medium text-slate-700 rounded-md hover:bg-slate-50 hover:text-blue-600 transition-colors duration-200" 
+               [class.active]="isActiveRoute('/servicios')">Servicios</a>
+            <a routerLink="/nosotros" 
+               class="nav-link px-3 py-2 text-sm font-medium text-slate-700 rounded-md hover:bg-slate-50 hover:text-blue-600 transition-colors duration-200" 
+               [class.active]="isActiveRoute('/nosotros')">Nosotros</a>
+            <a routerLink="/testimonios" 
+               class="nav-link px-3 py-2 text-sm font-medium text-slate-700 rounded-md hover:bg-slate-50 hover:text-blue-600 transition-colors duration-200" 
+               [class.active]="isActiveRoute('/testimonios')">Testimonios</a>
+            <a routerLink="/contacto" 
+               class="nav-link px-3 py-2 text-sm font-medium text-slate-700 rounded-md hover:bg-slate-50 hover:text-blue-600 transition-colors duration-200" 
+               [class.active]="isActiveRoute('/contacto')">Contacto</a>
+            <a *ngIf="isAuthenticated" 
+               routerLink="/dashboard" 
+               class="nav-link ml-2 px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 transition-colors duration-200 shadow-sm" 
+               [class.active]="isActiveRoute('/dashboard')">Dashboard</a>
+          </nav>
+
+          <!-- Botón Móvil -->
+          <div class="md:hidden">
+            <button type="button" 
+                    (click)="toggleMobileMenu()"
+                    class="inline-flex items-center justify-center p-2 rounded-md text-slate-600 hover:text-slate-800 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+              <span class="sr-only">Abrir menú</span>
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+            </button>
+          </div>
         </div>
-        <!-- Botón hamburguesa -->
-        <button 
-          id="menu-toggle" 
-          class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500" 
-          aria-label="Abrir menú"
-          (click)="toggleMobileMenu()">
-          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
-        <nav class="navigation" id="main-nav">
-          <ul 
-            id="main-menu" 
-            class="hidden md:flex flex-col md:flex-row md:space-x-6 bg-white md:bg-transparent absolute md:static top-full left-0 w-full md:w-auto shadow md:shadow-none rounded-xl md:rounded-none z-50 md:z-auto"
-            [class.hidden]="isMobileMenuHidden"
-            [class.md\:flex]="true">
-            <li><a routerLink="/home" class="nav-link block px-3 py-2 rounded-md text-slate-700 hover:bg-blue-600 hover:text-white transition font-medium" [class.active]="isActiveRoute('/home')" (click)="closeMobileMenu()">Inicio</a></li>
-            <li><a routerLink="/servicios" class="nav-link block px-3 py-2 rounded-md text-slate-700 hover:bg-blue-600 hover:text-white transition font-medium" [class.active]="isActiveRoute('/servicios')" (click)="closeMobileMenu()">Servicios</a></li>
-            <li><a routerLink="/nosotros" class="nav-link block px-3 py-2 rounded-md text-slate-700 hover:bg-blue-600 hover:text-white transition font-medium" [class.active]="isActiveRoute('/nosotros')" (click)="closeMobileMenu()">Nosotros</a></li>
-            <li><a routerLink="/testimonios" class="nav-link block px-3 py-2 rounded-md text-slate-700 hover:bg-blue-600 hover:text-white transition font-medium" [class.active]="isActiveRoute('/testimonios')" (click)="closeMobileMenu()">Testimonios</a></li>
-            <li><a routerLink="/contacto" class="nav-link block px-3 py-2 rounded-md text-slate-700 hover:bg-blue-600 hover:text-white transition font-medium" [class.active]="isActiveRoute('/contacto')" (click)="closeMobileMenu()">Contacto</a></li>
-            <li><a routerLink="/login" class="nav-link block px-3 py-2 rounded-md text-slate-700 hover:bg-blue-600 hover:text-white transition font-medium" [class.active]="isActiveRoute('/login')" (click)="closeMobileMenu()">Acceso</a></li>
-            <li *ngIf="isAuthenticated"><a routerLink="/dashboard" class="nav-link block px-3 py-2 rounded-md text-slate-700 hover:bg-blue-600 hover:text-white transition font-medium" [class.active]="isActiveRoute('/dashboard')" (click)="closeMobileMenu()">Dashboard</a></li>
-          </ul>
-        </nav>
+      </div>
+
+      <!-- Menú Móvil -->
+      <div class="md:hidden" 
+           [class.hidden]="isMobileMenuHidden"
+           id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-slate-100">
+          <a routerLink="/home" 
+             class="block px-3 py-2 text-base font-medium text-slate-700 rounded-md hover:bg-slate-50 hover:text-blue-600"
+             [class.active]="isActiveRoute('/home')"
+             (click)="closeMobileMenu()">Inicio</a>
+          <a routerLink="/servicios" 
+             class="block px-3 py-2 text-base font-medium text-slate-700 rounded-md hover:bg-slate-50 hover:text-blue-600"
+             [class.active]="isActiveRoute('/servicios')"
+             (click)="closeMobileMenu()">Servicios</a>
+          <a routerLink="/nosotros" 
+             class="block px-3 py-2 text-base font-medium text-slate-700 rounded-md hover:bg-slate-50 hover:text-blue-600"
+             [class.active]="isActiveRoute('/nosotros')"
+             (click)="closeMobileMenu()">Nosotros</a>
+          <a routerLink="/testimonios" 
+             class="block px-3 py-2 text-base font-medium text-slate-700 rounded-md hover:bg-slate-50 hover:text-blue-600"
+             [class.active]="isActiveRoute('/testimonios')"
+             (click)="closeMobileMenu()">Testimonios</a>
+          <a routerLink="/contacto" 
+             class="block px-3 py-2 text-base font-medium text-slate-700 rounded-md hover:bg-slate-50 hover:text-blue-600"
+             [class.active]="isActiveRoute('/contacto')"
+             (click)="closeMobileMenu()">Contacto</a>
+          <a *ngIf="isAuthenticated" 
+             routerLink="/dashboard" 
+             class="block px-3 py-2 text-base font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700"
+             [class.active]="isActiveRoute('/dashboard')"
+             (click)="closeMobileMenu()">Dashboard</a>
+        </div>
       </div>
     </header>
 

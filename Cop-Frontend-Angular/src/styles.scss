@@ -1,10 +1,17 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* You can add global styles to this file, and also import other style files */
+/* Configuración base */
+:root {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --text-main: #1f2937;
+  --text-secondary: #4b5563;
+  --background: #ffffff;
+  --background-alt: #f9fafb;
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-/* Reset básico y box-sizing */
+/* Reset y configuración base */
 *,
 *::before,
 *::after {

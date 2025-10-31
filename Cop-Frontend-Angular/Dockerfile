@@ -1,10 +1,10 @@
 # syntax=docker/dockerfile:1
 
-# Etapa de build: usa Node 20.19.15 para compilar Angular
-ARG NODE_VERSION=20.19.15
+# Etapa de build: usa Node 20.19.0 para compilar Angular
+ARG NODE_VERSION=20.19.0
 ARG APP_NAME=cop-frontend-angular
 
-FROM node:${NODE_VERSION}-alpine AS builder
+FROM node:${NODE_VERSION} AS builder
 WORKDIR /app
 
 # Instala dependencias con package-lock para builds reproducibles
